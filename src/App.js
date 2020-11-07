@@ -18,7 +18,7 @@ const App = () => {
         <Switch>
           <Route exact path="/login" render={props => <LoginScreen {...props} togLog={toggleLoggedIn} />} />
           <Route exact path="/voice_login" render={props => <VoiceLogin {...props} togLog={toggleLoggedIn} />} />
-          <Route exact path="/" render={props => <Dashboard {...props} togLog={toggleLoggedIn} />} />
+          <Route exact path="/" render={props => <VoiceLogin {...props} />} />
         </Switch>
       </div>
     </Router>
