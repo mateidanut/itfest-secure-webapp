@@ -3,6 +3,7 @@ import LoginScreen from './components/login_screen/loginScreen';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/dashboard/dashboard';
 import VoiceLogin from './components/voice_login/voiceLogin';
+import VoiceRegister from './components/voice_register/voiceRegister';
 
 const App = () => {
   const [loggedIn, changeLoggedIn] = useState(0);
@@ -18,6 +19,7 @@ const App = () => {
         <Switch>
           <Route exact path="/login" render={props => <LoginScreen {...props} togLog={toggleLoggedIn} />} />
           <Route exact path="/voice_login" render={props => <VoiceLogin {...props} togLog={toggleLoggedIn} />} />
+          <Route exact path="/voice_register" render={props => <VoiceRegister {...props} togLog={toggleLoggedIn} />} />
           <Route exact path="/" render={props => <VoiceLogin {...props} />} />
         </Switch>
       </div>
