@@ -1,10 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="870967407366-30ujg0nn7i5gcjbn8p0monc5t2tbe4hs.apps.googleusercontent.com">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="google-signin-client_id"
+      content="1016214047416-nogkhjehmltg3kmh6dac94luu5fpmato.apps.googleusercontent.com"
+    />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
 
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
@@ -18,20 +21,20 @@
     <title>React App</title>
     <script src="https://apis.google.com/js/platform.js?onload=triggerGoogleLoaded" async defer></script>
     <script type="text/javascript">
-        function triggerGoogleLoaded() {
-          console.log("google event loaded");
-            gapi.load('auth2', () => {
-                gapi.auth2.init().then(() => {
-                    // DO NOT ATTEMPT TO RENDER BUTTON UNTIL THE 'Init' PROMISE RETURNS
-                    window.dispatchEvent(new Event('google-loaded'));
-                });
-            });
-        }
+      function triggerGoogleLoaded() {
+        console.log('google event loaded');
+        gapi.load('auth2', () => {
+          gapi.auth2.init().then(() => {
+            // DO NOT ATTEMPT TO RENDER BUTTON UNTIL THE 'Init' PROMISE RETURNS
+            window.dispatchEvent(new Event('google-loaded'));
+          });
+        });
+      }
     </script>
-</head>
-<body>
-<div id="root"></div>
-<!--
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
   This HTML file is a template.
   If you open it directly in the browser, you will see an empty page.
 
@@ -41,6 +44,5 @@
   To begin the development, run `npm start`.
   To create a production bundle, use `npm run build`.
 -->
-
-</body>
+  </body>
 </html>

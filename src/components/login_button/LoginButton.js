@@ -14,13 +14,18 @@ class LoginButton extends React.Component {
     });
 
   onSignIn = googleUser => {
-    this.toggleLoggedIn();
+    // this.toggleLoggedIn();
+    this.props.togLog();
 
     let user = googleUser.getBasicProfile();
     let id_token = googleUser.getAuthResponse().id_token;
 
+    localStorage.setItem('token', id_token);
+    this.props.togLog();
+
     console.log('google user obj', user);
     console.log('google_id_token', id_token);
+    this.props.history.replace('/');
     // plus any other logic here
   };
 
@@ -31,7 +36,7 @@ class LoginButton extends React.Component {
       width: 250,
       height: 40,
       longtitle: true,
-      theme: 'light',
+      theme: 'dark',
       onsuccess: this.onSignIn
     });
   };
@@ -44,7 +49,8 @@ class LoginButton extends React.Component {
       auth2
         .signOut()
         .then(() => {
-          this.toggleLoggedIn();
+          this.props.togLog();
+          // this.toggleLoggedIn();
           console.log('Logged out successfully');
         })
         .catch(err => {
@@ -63,15 +69,9 @@ class LoginButton extends React.Component {
   render() {
     // noinspection CheckTagEmptyBody
     return (
-      <div>
+      <>
         <div id="my-signin2"></div>
-        <br />
-        {this.state.isLoggedIn && (
-          <button style={{ width: 200, height: 40, textAlign: 'center' }} onClick={this.logout}>
-            Logout
-          </button>
-        )}
-      </div>
+      </>
     );
   }
 }

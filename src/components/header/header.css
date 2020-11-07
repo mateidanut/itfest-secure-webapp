@@ -1,0 +1,53 @@
+.al-header {
+  position: fixed;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  background: #355c97;
+  z-index: 100;
+}
+
+.al-logo {
+  height: 100%;
+  display: flex;
+  margin-left: 20px;
+}
+
+.header-nav-links {
+  height: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: 60px;
+}
+
+.header-nav-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.al-logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.header-nav-links a:hover {
+  background: #1f3658;
+  color: white;
+}
