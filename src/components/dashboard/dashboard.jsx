@@ -13,8 +13,14 @@ class ScreenDashboard extends React.Component {
         //     this.props.history.replace('/login');
         // }
         const isLoggedIn = localStorage.getItem("token");
+        const isVoiceLoggedIn = localStorage.getItem("voice_token");
         if (!isLoggedIn) {
-            this.props.history.replace('/login');
+            console.log('FROM / to /login') 
+            this.props.history.replace('/login')
+        }
+        if (isLoggedIn && !isVoiceLoggedIn) {
+            console.log('FROM / to /voice_login') 
+            this.props.history.replace('/voice_login')
         }
     }
 

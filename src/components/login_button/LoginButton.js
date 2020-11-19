@@ -25,7 +25,8 @@ class LoginButton extends React.Component {
 
     console.log('google user obj', user);
     console.log('google_id_token', id_token);
-    this.props.history.replace('/');
+    console.log('FROM loginButton to /voice_login');
+    this.props.history.replace('/voice_login');
     // plus any other logic here
   };
 

@@ -9,10 +9,16 @@ class LoginScreen extends React.Component {
     componentDidMount() {
         // Redirect to login if user is logged in
         const isLoggedIn = localStorage.getItem("token");
-        if (isLoggedIn) {
-            
+        const isVoiceLoggedIn = localStorage.getItem("voice_token");
+        if (isLoggedIn && isVoiceLoggedIn) {
+           console.log('FROM loginScreen to /') 
             // this.props.signIn();
             this.props.history.replace('/');
+        } else {
+            if (isLoggedIn && !isVoiceLoggedIn) {
+                console.log('FROM loginScreen to /voice_login') 
+                this.props.history.replace('/voice_login')
+            }
         }
     }
 

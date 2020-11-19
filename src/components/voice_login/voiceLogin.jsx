@@ -15,7 +15,8 @@ class VoiceLogin extends React.Component {
                 m: 0,
                 s: 0
                 }
-            }
+            },
+            denied: 0
         }
         handleAudioStop(data){
             console.log(data)
@@ -34,6 +35,13 @@ class VoiceLogin extends React.Component {
                 })
                 .then(res => {
                     console.log(res)
+                    if (res.data == 1) {
+                        localStorage.setItem('token', 1);
+                        localStorage.setItem('voice_token', 1);
+                        this.props.history.replace('/');
+                    } else {
+                        this.setState({ denied: 1 });
+                    }
                     return res
                 });
         }
@@ -71,6 +79,9 @@ class VoiceLogin extends React.Component {
 
     render() {
         return (
+        <>
+        <h1>{`Read the following sentence: "Autentificare vocala activata"`}</h1>
+        <div>{this.state.denied && <h1>ACCESS DENIED!!!</h1>}</div>
         <Recorder
             record={true}
             title={"New recording"}
@@ -80,6 +91,7 @@ class VoiceLogin extends React.Component {
             handleAudioUpload={data => this.handleAudioUpload(data)}
             handleRest={() => this.handleRest()} 
         />
+        </>
         )
     } 
 }
